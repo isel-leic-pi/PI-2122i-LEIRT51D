@@ -1,0 +1,8 @@
+https://github.com/isel-leic-pi/PI-2122i-LEIRT51D/wiki
+
+Node JS
+VS Code
+
+Filipe Freitas
+ffreitas@cc.isel.ipl.pt
+CCISEL Gabinete 6 
