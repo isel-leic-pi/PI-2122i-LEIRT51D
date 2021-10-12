@@ -22,7 +22,7 @@ const c = 2
 
 let d = b || -1
 
-console.log("ab" - 1)
+console.log("51" - 1)
 
 let e = 10
 let f = "10"
