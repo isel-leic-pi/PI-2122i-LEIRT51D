@@ -73,8 +73,8 @@ function executeAndPrint(a,b, transform){
     console.log("Transformacao = " + res)
 }
 
-//executeAndPrint(3,4, function(a,b){return a + b})
-//executeAndPrint(3,4, function(a,b){return a - b})
+executeAndPrint(3,4, function(a,b){return a + b})
+executeAndPrint(3,4, function(a,b){return a - b})
 
 executeAndPrint(3,4, (a,b) =>  a + b)
 executeAndPrint(3,4, (a,b) =>  a - b)

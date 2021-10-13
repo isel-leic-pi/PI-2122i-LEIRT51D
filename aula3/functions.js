@@ -1,7 +1,7 @@
 function f1(a){
     console.log("Start F1")
 
-    let f2 = function (n){
+    function f2(n){
         console.log("F2 n = " + n)
     }
 
