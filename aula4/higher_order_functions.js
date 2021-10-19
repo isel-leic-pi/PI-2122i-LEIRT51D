@@ -44,3 +44,16 @@ function reduce(array, func, start){
 console.log(reduce(numbers, (prev,curr)=> prev + curr, 5))
 
 const triple2 = map(filter(numbers, e => e % 2), e => e * 3)
+
+console.log(numbers.reduce(combine, 5))
+
+function combine(prev, curr, index, array){
+    console.log("Combine")
+    console.log(prev)
+    console.log(curr)
+    console.log(index)
+    console.log(array)
+    return prev + curr
+
+
+}

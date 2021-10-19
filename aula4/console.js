@@ -1,5 +1,3 @@
-
-
 function changeConsole(){
     const oldConsole = console.log
     console.log = function(value){
