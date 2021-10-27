@@ -27,8 +27,8 @@ async function withAsyncAwait(){
     const array = [request1, request2]
 
     const results = await Promise.all(array)
-    //console.log[0]
-    //console.log[1]
+    //console.log(result[0])
+    //console.log(result[1])
     return results
         
 }
