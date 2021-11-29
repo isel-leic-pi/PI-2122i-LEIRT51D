@@ -1,45 +1,45 @@
-const taskData = require('./tasks-db_mem')
+const data = require('./tasks-db.js')
 const errors = require('./errors/tasks-errors')
 
 module.exports = {
-    getTasks : getTasks,
-    getTaskByID : getTaskByID,
-    updateTask : updateTask,
-    createTask : createTask,
-    deleteTask : deleteTask
+    getTasks: getTasks,
+    addTask: addTask,
+    getTaskById: getTaskById,
+    updateTask: updateTask,
+    deleteTask: deleteTask
 }
 
-function getTasks(token){
-    //TODO verify if userToken are undefined
+function addTask(text, userToken){
+    //TODO verify if text and userToken are undefined 
     //verify if userToken is associated to user - DONE
-    //get tasks of user - DONE
-    return taskData.getUserByToken(token)
-            .then(user => taskData.getTasksByUserId(user.id))
+    //Create task - DONE
+    return data.getUserByToken(userToken)
+            .then(user => data.addTask(text, user.id)) 
+            .catch(error => Promise.reject(errors.NOT_AUTHORIZE())) //TODO check if it is NOTFOUND USER
 }
 
-function getTaskByID(id, token){
+function getTaskById(id, userToken){
     //TODO verify if id and userToken are undefined 
     //TODO verify if userToken is associated to user
     //TODO get user task
     //TODO verify if user is owner
-    if(!id) return Promise.reject(errors.INVALID_TASK_ID(id))
-    return taskData.getTaskByID(id)
+    return data.getTaskById(id)
 }
 
-function createTask(text, token){
-    //TODO verify if text and token are not undefined
-    //verify if token is associated with user
-    //create Task
-    return taskData.getUserByToken(token)
-                    .then(user => taskData.createTask(text, user.id))
-                    .catch(error => Promise.reject(errors.NOT_AUTHORIZE())) 
-                        // TODO Verify if is user Not FOUND
+function getTasks(userToken){
+    //TODO verify if userToken are undefined
+    //verify if userToken is associated to user - DONE
+    //get tasks of user - DONE
+    return data.getUserByToken(userToken)
+            .then(user => data.getTasksByUserId(user.id))
+            
+     
 }
 
 function updateTask(id, text){
     console.log("updateTask")
 }
 
-function deleteTask(id){ 
-    console.log("deleteTask")
+function deleteTask(id){
+    resp.json("deleteTask")
 }
