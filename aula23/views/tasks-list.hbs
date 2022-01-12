@@ -1,0 +1,21 @@
+
+        <table class="table table-striped table-dark">
+            <tr>
+                <th>Identifier</th>
+                <th>Text</th>
+                <th></th>
+            </tr>
+            {{#each tasks}}
+                <tr id="taskrow_{{id}}" >
+                    <td><a href="tasks/{{id}}">{{id}}</a> </td>
+                    <td>{{text}}</td>
+                    <td><button id="btn_{{id}}"> Delete </button></td>
+                </tr>
+            {{/each}}
+
+        </table>
+        <form method="Post" action="/tasks">
+            <label for="textInput">Text:</label>
+            <input type="text" id="textInput" name="text">
+            <input type="submit" >
+        </form>
