@@ -14,10 +14,12 @@
         <a href="/"> Home </a>
         <a href="/tasks"> Tasks </a>
         {{#if username}}
-            <a href="/logout">Logout {{username}}</a>
-            
+            <form method="post" action="/logout">
+                <input type="submit" value="Logout">
+                Username : {{username}}
+            </form>
 		{{else}}
-             <a href="/login">Login</a>
+             <a href="/login" > Login </a>
 		{{/if}}
         {{{body}}}
         <!-- Footer -->

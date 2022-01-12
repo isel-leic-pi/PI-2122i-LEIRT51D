@@ -13,7 +13,7 @@ module.exports = function(app, router, services){
 
     router.get('/login', getLogin)
     router.post('/login', postLogin)
-    router.get('/logout', logout)
+    router.post('/logout', logout)
     
     return router
 
