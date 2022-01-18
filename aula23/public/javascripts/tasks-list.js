@@ -14,7 +14,7 @@ function deleteTaskHandler(){
     }
     fetch(`/api/tasks/${id}`, options)
     .then(res =>{
-        console.log(req.status)
+        console.log(res.status)
         return res.json()
     } )
     .then(body => {
